@@ -1,6 +1,5 @@
 # bootc-simple-demo
 
-
 ## config.toml
 
 Currently the config.toml will create user rory. 
@@ -19,18 +18,18 @@ echo $CR_PAT | podman login ghcr.io -u $GITHUB_USER --password-stdin
 
 Build image:
    ```
-podman build -t ghcr.io/$NAMESPACE/fedora-bootc-gitops:latest .
+podman build -t ghcr.io/$NAMESPACE/bootc-simple-demo:latest .
 
    ```
 Push Image:
    ```
-podman push ghcr.io/$NAMESPACE/fedora-bootc-gitops:latest
+podman push ghcr.io/$NAMESPACE/bootc-simple-demo:latest
 
    ```
 
 Build anaconda iso (for macosx apple silicon):
    ```
-./build-iso.sh
+./build-vmdk-arm64.sh
    ```
 
 
