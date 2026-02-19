@@ -1,4 +1,4 @@
-# fedora-bootc-gitops
+# bootc-simple-demo
 
 
 ## config.toml
