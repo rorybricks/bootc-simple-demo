@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-24.04-arm
     env:
       IMAGE_NAME: bootc-simple-demo
-      REGISTRY: ghcr.io/roryschellekens
+      REGISTRY: ghcr.io
    
     steps:
       - name: Clone the repository
@@ -43,7 +43,7 @@ jobs:
       - name: Log in to the GitHub Container registry
         uses: redhat-actions/podman-login@v1
         with:
-          registry: ${{ env.REGISTRY }}
+          registry: ${{ env.REGISTRY }}/${{ github.actor }}
           username: ${{ github.actor }}
           password: ${{ secrets.CR_PAT }}
 
@@ -53,4 +53,4 @@ jobs:
         with:
           image: ${{ steps.build-image.outputs.image }}
           tags: ${{ steps.build-image.outputs.tags }}
-          registry: ${{ env.REGISTRY }}
+          registry: ${{ env.REGISTRY }}/${{ github.actor }}
